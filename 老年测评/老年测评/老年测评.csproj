@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E49FD625-C88A-4D17-A7B1-A457449FD6EC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>老年测评</RootNamespace>
+    <AssemblyName>老年测评</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IrisSkin2, Version=2006.3.22.45, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dao\BasicDataDao.cs" />
+    <Compile Include="Dao\itemsDao.cs" />
+    <Compile Include="Dao\jiatingDao.cs" />
+    <Compile Include="Dao\jibingDao.cs" />
+    <Compile Include="Dao\TabpageHelper.cs" />
+    <Compile Include="Dao\UsesDao.cs" />
+    <Compile Include="Db\concmd.cs" />
+    <Compile Include="Db\confactory.cs" />
+    <Compile Include="Db\conString.cs" />
+    <Compile Include="Db\sqlcontent.cs" />
+    <Compile Include="form\基本表\BasicData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\基本表\BasicData.Designer.cs">
+      <DependentUpon>BasicData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\登录与注册\denglu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\登录与注册\denglu.Designer.cs">
+      <DependentUpon>denglu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\huizong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\huizong.designer.cs">
+      <DependentUpon>huizong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\mainmenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\mainmenu.Designer.cs">
+      <DependentUpon>mainmenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\基本表\jiating.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\基本表\jiating.Designer.cs">
+      <DependentUpon>jiating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\基本表\jibing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\基本表\jibing.Designer.cs">
+      <DependentUpon>jibing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\量表\MINI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\量表\MINI.Designer.cs">
+      <DependentUpon>MINI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\量表\MMSE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\量表\MMSE.Designer.cs">
+      <DependentUpon>MMSE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\量表\功能独立性.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\量表\功能独立性.Designer.cs">
+      <DependentUpon>功能独立性.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\量表\尿失禁.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\量表\尿失禁.Designer.cs">
+      <DependentUpon>尿失禁.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\量表\抑郁症.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\量表\抑郁症.Designer.cs">
+      <DependentUpon>抑郁症.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\量表\步态.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\量表\步态.Designer.cs">
+      <DependentUpon>步态.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\登录与注册\zhuce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\登录与注册\zhuce.Designer.cs">
+      <DependentUpon>zhuce.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\量表\便秘.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\量表\便秘.Designer.cs">
+      <DependentUpon>便秘.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\量表\前列腺.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\量表\前列腺.Designer.cs">
+      <DependentUpon>前列腺.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\量表\听力.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\量表\听力.Designer.cs">
+      <DependentUpon>听力.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\量表\平衡.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\量表\平衡.Designer.cs">
+      <DependentUpon>平衡.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\量表\焦虑.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\量表\焦虑.Designer.cs">
+      <DependentUpon>焦虑.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\量表\睡眠.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\量表\睡眠.Designer.cs">
+      <DependentUpon>睡眠.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\量表\膀胱.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\量表\膀胱.Designer.cs">
+      <DependentUpon>膀胱.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\量表\营养.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\量表\营养.Designer.cs">
+      <DependentUpon>营养.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\量表\衰弱.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\量表\衰弱.Designer.cs">
+      <DependentUpon>衰弱.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\量表\跌倒.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\量表\跌倒.Designer.cs">
+      <DependentUpon>跌倒.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="form\基本表\BasicData.resx">
+      <DependentUpon>BasicData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\登录与注册\denglu.resx">
+      <DependentUpon>denglu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\huizong.resx">
+      <DependentUpon>huizong.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\mainmenu.resx">
+      <DependentUpon>mainmenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\基本表\jiating.resx">
+      <DependentUpon>jiating.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\基本表\jibing.resx">
+      <DependentUpon>jibing.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\量表\MINI.resx">
+      <DependentUpon>MINI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\量表\MMSE.resx">
+      <DependentUpon>MMSE.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\量表\功能独立性.resx">
+      <DependentUpon>功能独立性.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\量表\尿失禁.resx">
+      <DependentUpon>尿失禁.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\量表\抑郁症.resx">
+      <DependentUpon>抑郁症.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\量表\步态.resx">
+      <DependentUpon>步态.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\登录与注册\zhuce.resx">
+      <DependentUpon>zhuce.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\量表\便秘.resx">
+      <DependentUpon>便秘.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\量表\前列腺.resx">
+      <DependentUpon>前列腺.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\量表\听力.resx">
+      <DependentUpon>听力.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\量表\平衡.resx">
+      <DependentUpon>平衡.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\量表\焦虑.resx">
+      <DependentUpon>焦虑.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\量表\睡眠.resx">
+      <DependentUpon>睡眠.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\量表\膀胱.resx">
+      <DependentUpon>膀胱.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\量表\营养.resx">
+      <DependentUpon>营养.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\量表\衰弱.resx">
+      <DependentUpon>衰弱.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\量表\跌倒.resx">
+      <DependentUpon>跌倒.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Resources\9987c9177f3e670979debf4e3ac79f3df9dc55a2_看图王2.jpg" />
+    <None Include="Resources\9987c9177f3e670979debf4e3ac79f3df9dc55a2_看图王1.jpg" />
+    <None Include="Resources\9987c9177f3e670979debf4e3ac79f3df9dc55a2_看图王.jpg" />
+    <None Include="Resources\9987c9177f3e670979debf4e3ac79f3df9dc55a2.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
